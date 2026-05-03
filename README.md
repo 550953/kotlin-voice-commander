@@ -145,7 +145,7 @@ Voice Commander — полностью офлайн Android-приложение
 
 **Nikolay Shikin** — freelance developer & designer  
 🌐 [shikinn.com](https://shikinn.com)  
-💼 [freelance.ru/users/guru_sun](https://freelance.ru/users/guru_sun)
+💼 [freelance.ru/guru_sun](https://freelance.ru/guru_sun)
 
 ---
 
