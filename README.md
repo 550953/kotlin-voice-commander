@@ -1,7 +1,8 @@
 # 🎙️ Voice Commander
 
 **Offline voice assistant for abbreviation commands**  
-**Офлайн голосовой ассистент для команд-аббревиатур**
+**Офлайн голосовой ассистент для команд-аббревиатур**  
+**Офлайн голосовий асистент для команд-абревіатур**
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)
@@ -12,13 +13,22 @@
 
 ---
 
-## EN
+[![EN](https://img.shields.io/badge/🇬🇧-English-4285F4?style=for-the-badge)](#en)
+[![RU](https://img.shields.io/badge/🇷🇺-Русский-CC0000?style=for-the-badge)](#ru)
+[![UA](https://img.shields.io/badge/🇺🇦-Українська-FFD700?style=for-the-badge)](#ua)
+
+---
+
+<a name="en"></a>
+## 🇬🇧 EN
 
 ### What is this?
 
 Voice Commander is a fully offline Android app that recognizes short abbreviation commands (e.g. `ВГВКМ`, `ВКРОР`) and converts them into coded responses via TTS (text-to-speech).
 
-No internet. No cloud. Works in noisy environments, military comms, industrial control, accessibility devices.
+No internet. No cloud. Works in noisy environments — military comms, industrial control, accessibility devices.
+
+> Swap Vosk model and `dictionary.json` to use any language.
 
 ### How it works
 
@@ -76,23 +86,21 @@ Prefix dictionary (`prefix.json`):
 - ♿ **Accessibility (AAC)** — voice shortcuts for people with limited mobility
 - 🏥 **Medical / emergency** — fast triage codes
 - 📦 **Warehouse / logistics** — pick-by-voice operations
-
-### Screens
-
-17 UI states designed in Material 3:  
-main screen · loading · listening · result · partial match · not found · settings · and more
-
-Full UI mockup and design spec included in `/design` folder.
+- 🎓 **Training / QA** — voice-driven test scripts
+- 🔒 **Air-gapped systems** — zero network dependency
 
 ---
 
-## RU
+<a name="ru"></a>
+## 🇷🇺 RU
 
 ### Что это?
 
 Voice Commander — полностью офлайн Android-приложение, которое распознаёт короткие команды-аббревиатуры (например `ВГВКМ`, `ВКРОР`) и преобразует их в кодовые ответы через TTS.
 
 Без интернета. Без облака. Работает в шумных условиях — производство, военная связь, системы управления, средства реабилитации.
+
+> Замените модель Vosk и `dictionary.json` для работы с любым языком.
 
 ### Как работает
 
@@ -131,13 +139,61 @@ Voice Commander — полностью офлайн Android-приложение
 - ♿ **Доступная среда (AAC)** — голосовые команды для людей с ограниченной подвижностью
 - 🏥 **Медицина / экстренные службы** — быстрые коды триажа
 - 📦 **Склад / логистика** — голосовое управление операциями
+- 🎓 **Обучение / контроль качества** — голосовые тестовые сценарии
+- 🔒 **Изолированные системы** — без зависимости от сети
 
-### Экраны
+---
 
-17 состояний UI, спроектированных по Material 3:  
-главный экран · загрузка · прослушивание · результат · частичное совпадение · не найдено · настройки · и другие
+<a name="ua"></a>
+## 🇺🇦 UA
 
-Полный HTML-мок и дизайн-спецификация — в папке `/design`.
+### Що це?
+
+Voice Commander — повністю офлайн Android-застосунок, який розпізнає короткі команди-абревіатури (наприклад `ВГВКМ`, `ВКРОР`) і перетворює їх на кодові відповіді через TTS.
+
+Без інтернету. Без хмари. Працює в галасливих умовах — виробництво, військовий зв'язок, системи управління, засоби реабілітації.
+
+> Замініть модель Vosk і `dictionary.json` для роботи з будь-якою мовою.
+
+### Як працює
+
+```
+Вимовити абревіатуру → Vosk розпізнає → Двопрохідний пошук → TTS озвучує результат
+```
+
+**Прохід 1** — пошук за префіксом (перші 3 символи)  
+**Прохід 2** — точний збіг в основному словнику  
+**Результат** — код озвучується по цифрах: `13322` → *«один · три · три · два · два»*
+
+### Стек
+
+| Компонент | Технологія |
+|---|---|
+| UI | Jetpack Compose + Material 3 |
+| Розпізнавання мовлення | Vosk (офлайн, ru-0.22) |
+| Озвучування | Android TTS |
+| Мова | Kotlin |
+| Мін. версія Android | 8.0 (API 26) |
+| Інтернет | ❌ Не потрібен |
+
+### Встановлення
+
+1. Клонувати репозиторій
+2. Відкрити в Android Studio
+3. Покласти модель Vosk у `app/src/main/assets/model/`  
+   → Завантажити: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+4. Додати `dictionary.json` і `prefix.json` у `app/src/main/assets/`
+5. Зібрати та запустити
+
+### Застосування
+
+- 🏭 **Промисловість / SCADA** — голосове керування без інтернету
+- 🎖️ **Військовий / спецзв'язок** — короткі кодові команди
+- ♿ **Доступне середовище (AAC)** — голосові команди для людей з обмеженою рухливістю
+- 🏥 **Медицина / екстрені служби** — швидкі коди тріажу
+- 📦 **Склад / логістика** — голосове керування операціями
+- 🎓 **Навчання / контроль якості** — голосові тестові сценарії
+- 🔒 **Ізольовані системи** — без залежності від мережі
 
 ---
 
@@ -145,7 +201,8 @@ Voice Commander — полностью офлайн Android-приложение
 
 **Nikolay Shikin** — freelance developer & designer  
 🌐 [shikinn.com](https://shikinn.com)  
-💼 [freelance.ru/guru_sun](https://freelance.ru/guru_sun)
+💼 [freelance.ru/guru_sun](https://freelance.ru/guru_sun)  
+🐙 [github.com/550953](https://github.com/550953)
 
 ---
 
