@@ -49,16 +49,18 @@ No internet. No cloud. Works in noisy environments — military comms, industria
 
 <div align="center">
 
-| | | |
-|:-:|:-:|:-:|
-| <img src="docs/images/initial_state.jpg" width="160"><br>*Initial State* | <img src="docs/images/system_permissions.jpg" width="160"><br>*Permissions* | <img src="docs/images/json_setup.jpg" width="160"><br>*JSON Setup* |
-| <img src="docs/images/ready_config.jpg" width="160"><br>*Ready Config* | <img src="docs/images/voice_execution.jpg" width="160"><br>*Voice Execution* | <img src="docs/images/recognition_feedback.jpg" width="160"><br>*Recognition Feedback* |
+|    |    |    |
+|----|----|----|
+| <img src="docs/images/initial_state.jpg" width="160"><br><em>Initial State</em> | <img src="docs/images/system_permissions.jpg" width="160"><br><em>Permissions</em> | <img src="docs/images/json_setup.jpg" width="160"><br><em>JSON Setup</em> |
+| <img src="docs/images/ready_config.jpg" width="160"><br><em>Ready Config</em> | <img src="docs/images/voice_execution.jpg" width="160"><br><em>Voice Execution</em> | <img src="docs/images/recognition_feedback.jpg" width="160"><br><em>Recognition Feedback</em> |
 
 </div>
 
 ### How it works
-Speak abbreviation → Vosk recognizes → Two-pass search → TTS speaks the result
 
+```
+Speak abbreviation → Vosk recognizes → Two-pass search → TTS speaks the result
+```
 
 **Pass 1** — prefix lookup (first 3 characters)  
 **Pass 2** — exact match in main dictionary  
@@ -81,153 +83,226 @@ Speak abbreviation → Vosk recognizes → Two-pass search → TTS speaks the re
   "ВГВКМ": "13322",
   "ВКРОР": "41124"
 }
-prefix.json:
+```
 
+`prefix.json`:
+```json
 {
   "ВГВ": ["ВГВКМ"],
   "ВКР": ["ВКРОР", "ВКРВК"]
 }
-Tech Stack
-Component	Technology
-Language	Kotlin
-UI	Jetpack Compose + Material 3
-Speech Recognition	Vosk (offline, ru-0.22)
-Text-to-Speech	Android TTS
-JSON parsing	Gson
-Min SDK	Android 8.0 (API 26)
-Internet	❌ Not required
-Required Permissions
-Permission	Purpose
-RECORD_AUDIO	Speech recognition
-READ_EXTERNAL_STORAGE	Load dictionary JSON files
-Where it's useful
-🏭 Industrial / SCADA — voice control without internet
-🎖️ Military / special comms — short coded commands
-♿ Accessibility (AAC) — voice shortcuts for limited mobility
-🏥 Medical / emergency — fast triage codes
-📦 Warehouse / logistics — pick-by-voice operations
-🎓 Training / QA — voice-driven test scripts
-🔒 Air-gapped systems — zero network dependency
+```
 
-🇷🇺 Русский
-Скачать APK · Быстрый старт · Смотреть демо
+### Tech Stack
 
-Что это?
-Voice Commander — полностью офлайн Android-приложение, которое распознаёт короткие команды-аббревиатуры (например ВГВКМ, ВКРОР) и преобразует их в кодовые ответы через TTS.
+| Component | Technology |
+|---|---|
+| Language | Kotlin |
+| UI | Jetpack Compose + Material 3 |
+| Speech Recognition | Vosk (offline, ru-0.22) |
+| Text-to-Speech | Android TTS |
+| JSON parsing | Gson |
+| Min SDK | Android 8.0 (API 26) |
+| Internet | ❌ Not required |
+
+### Required Permissions
+
+| Permission | Purpose |
+|---|---|
+| `RECORD_AUDIO` | Speech recognition |
+| `READ_EXTERNAL_STORAGE` | Load dictionary JSON files |
+
+### Where it's useful
+
+- 🏭 **Industrial / SCADA** — voice control without internet
+- 🎖️ **Military / special comms** — short coded commands
+- ♿ **Accessibility (AAC)** — voice shortcuts for limited mobility
+- 🏥 **Medical / emergency** — fast triage codes
+- 📦 **Warehouse / logistics** — pick-by-voice operations
+- 🎓 **Training / QA** — voice-driven test scripts
+- 🔒 **Air-gapped systems** — zero network dependency
+
+---
+
+<a name="ru"></a>
+## 🇷🇺 Русский
+
+**[Скачать APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Быстрый старт](#quick-start-ru)** · **[Смотреть демо](https://x.com/550953/status/2051284395743441243)**
+
+### Что это?
+
+Voice Commander — полностью офлайн Android-приложение, которое распознаёт короткие команды-аббревиатуры (например `ВГВКМ`, `ВКРОР`) и преобразует их в кодовые ответы через TTS.
 
 Без интернета. Без облака. Работает в шумных условиях — производство, военная связь, системы управления, средства реабилитации.
 
-Замените модель Vosk и dictionary.json для работы с любым языком.
+> Замените модель Vosk и `dictionary.json` для работы с любым языком.
 
-Демо
-Voice Commander Demo
-Нажмите на изображение — живое распознавание в действии
+### Демо
 
-Как работает
+<div align="center">
+
+<a href="https://x.com/550953/status/2051284395743441243">
+  <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
+</a>
+
+*Нажмите на изображение — живое распознавание в действии*
+
+</div>
+
+### Как работает
+
+```
 Произнести аббревиатуру → Vosk распознаёт → Двухпроходный поиск → TTS озвучивает результат
-Проход 1 — поиск по префиксу (первые 3 символа)
-Проход 2 — точное совпадение в основном словаре
-Результат — код по цифрам: 13322 → «один · три · три · два · два»
+```
 
+**Проход 1** — поиск по префиксу (первые 3 символа)  
+**Проход 2** — точное совпадение в основном словаре  
+**Результат** — код по цифрам: `13322` → *«один · три · три · два · два»*
 
-Быстрый старт
-Скачать APK из Releases или клонировать и собрать
-Положить модель Vosk в app/src/main/assets/model/
-→ Скачать: alphacephei.com/vosk/models (vosk-model-small-ru)
-Добавить dictionary.json и prefix.json в app/src/main/assets/
-Запустить — выдать разрешение на микрофон — нажать Слушать
-Формат словарей
-dictionary.json:
+<a name="quick-start-ru"></a>
+### Быстрый старт
 
+1. Скачать APK из [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) или клонировать и собрать
+2. Положить модель Vosk в `app/src/main/assets/model/`  
+   → Скачать: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+3. Добавить `dictionary.json` и `prefix.json` в `app/src/main/assets/`
+4. Запустить — выдать разрешение на микрофон — нажать **Слушать**
+
+### Формат словарей
+
+`dictionary.json`:
+```json
 {
   "ВГВКМ": "13322",
   "ВКРОР": "41124"
 }
-prefix.json:
+```
 
+`prefix.json`:
+```json
 {
   "ВГВ": ["ВГВКМ"],
   "ВКР": ["ВКРОР", "ВКРВК"]
 }
-Стек
-Компонент	Технология
-Язык	Kotlin
-UI	Jetpack Compose + Material 3
-Распознавание речи	Vosk (офлайн, ru-0.22)
-Озвучивание	Android TTS
-JSON	Gson
-Мин. SDK	Android 8.0 (API 26)
-Интернет	❌ Не нужен
-Применение
-🏭 Промышленность / SCADA — голосовое управление без интернета
-🎖️ Военная / спецсвязь — короткие кодовые команды
-♿ Доступная среда (AAC) — голосовые команды для людей с ограниченной подвижностью
-🏥 Медицина / экстренные службы — быстрые коды триажа
-📦 Склад / логистика — голосовое управление операциями
-🎓 Обучение / QA — голосовые тестовые сценарии
-🔒 Изолированные системы — без зависимости от сети
+```
 
-🇺🇦 Українська
-Завантажити APK · Швидкий старт · Дивитись демо
+### Стек
 
-Що це?
-Voice Commander — повністю офлайн Android-застосунок, який розпізнає короткі команди-абревіатури (наприклад ВГВКМ, ВКРОР) і перетворює їх на кодові відповіді через TTS.
+| Компонент | Технология |
+|---|---|
+| Язык | Kotlin |
+| UI | Jetpack Compose + Material 3 |
+| Распознавание речи | Vosk (офлайн, ru-0.22) |
+| Озвучивание | Android TTS |
+| JSON | Gson |
+| Мин. SDK | Android 8.0 (API 26) |
+| Интернет | ❌ Не нужен |
+
+### Применение
+
+- 🏭 **Промышленность / SCADA** — голосовое управление без интернета
+- 🎖️ **Военная / спецсвязь** — короткие кодовые команды
+- ♿ **Доступная среда (AAC)** — голосовые команды для людей с ограниченной подвижностью
+- 🏥 **Медицина / экстренные службы** — быстрые коды триажа
+- 📦 **Склад / логистика** — голосовое управление операциями
+- 🎓 **Обучение / QA** — голосовые тестовые сценарии
+- 🔒 **Изолированные системы** — без зависимости от сети
+
+---
+
+<a name="ua"></a>
+## 🇺🇦 Українська
+
+**[Завантажити APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Швидкий старт](#quick-start-ua)** · **[Дивитись демо](https://x.com/550953/status/2051284395743441243)**
+
+### Що це?
+
+Voice Commander — повністю офлайн Android-застосунок, який розпізнає короткі команди-абревіатури (наприклад `ВГВКМ`, `ВКРОР`) і перетворює їх на кодові відповіді через TTS.
 
 Без інтернету. Без хмари. Працює в галасливих умовах — виробництво, військовий зв'язок, системи управління, засоби реабілітації.
 
-Замініть модель Vosk і dictionary.json для роботи з будь-якою мовою.
+> Замініть модель Vosk і `dictionary.json` для роботи з будь-якою мовою.
 
-Демо
-Voice Commander Demo
-Натисніть на зображення — живе розпізнавання в дії
+### Демо
 
-Як працює
+<div align="center">
+
+<a href="https://x.com/550953/status/2051284395743441243">
+  <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
+</a>
+
+*Натисніть на зображення — живе розпізнавання в дії*
+
+</div>
+
+### Як працює
+
+```
 Вимовити абревіатуру → Vosk розпізнає → Двопрохідний пошук → TTS озвучує результат
-Прохід 1 — пошук за префіксом (перші 3 символи)
-Прохід 2 — точний збіг в основному словнику
-Результат — код по цифрах: 13322 → «один · три · три · два · два»
+```
 
+**Прохід 1** — пошук за префіксом (перші 3 символи)  
+**Прохід 2** — точний збіг в основному словнику  
+**Результат** — код по цифрах: `13322` → *«один · три · три · два · два»*
 
-Швидкий старт
-Завантажити APK з Releases або клонувати та зібрати
-Покласти модель Vosk у app/src/main/assets/model/
-→ Завантажити: alphacephei.com/vosk/models (vosk-model-small-ru)
-Додати dictionary.json і prefix.json у app/src/main/assets/
-Запустити — надати дозвіл на мікрофон — натиснути Слухати
-Формат словників
-dictionary.json:
+<a name="quick-start-ua"></a>
+### Швидкий старт
 
+1. Завантажити APK з [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) або клонувати та зібрати
+2. Покласти модель Vosk у `app/src/main/assets/model/`  
+   → Завантажити: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+3. Додати `dictionary.json` і `prefix.json` у `app/src/main/assets/`
+4. Запустити — надати дозвіл на мікрофон — натиснути **Слухати**
+
+### Формат словників
+
+`dictionary.json`:
+```json
 {
   "ВГВКМ": "13322",
   "ВКРОР": "41124"
 }
-prefix.json:
+```
 
+`prefix.json`:
+```json
 {
   "ВГВ": ["ВГВКМ"],
   "ВКР": ["ВКРОР", "ВКРВК"]
 }
-Стек
-Компонент	Технологія
-Мова	Kotlin
-UI	Jetpack Compose + Material 3
-Розпізнавання мовлення	Vosk (офлайн, ru-0.22)
-Озвучування	Android TTS
-JSON	Gson
-Мін. SDK	Android 8.0 (API 26)
-Інтернет	❌ Не потрібен
-Застосування
-🏭 Промисловість / SCADA — голосове керування без інтернету
-🎖️ Військовий / спецзв'язок — короткі кодові команди
-♿ Доступне середовище (AAC) — голосові команди для людей з обмеженою рухливістю
-🏥 Медицина / екстрені служби — швидкі коди тріажу
-📦 Склад / логістика — голосове керування операціями
-🎓 Навчання / QA — голосові тестові сценарії
-🔒 Ізольовані системи — без залежності від мережі
-Author
-Nikolay Shikin — freelance developer & designer
-🌐 shikinn.com
-💼 freelance.ru/guru_sun
-🐙 github.com/550953
+```
 
-MIT License · Made in Ukraine 🇺🇦
+### Стек
+
+| Компонент | Технологія |
+|---|---|
+| Мова | Kotlin |
+| UI | Jetpack Compose + Material 3 |
+| Розпізнавання мовлення | Vosk (офлайн, ru-0.22) |
+| Озвучування | Android TTS |
+| JSON | Gson |
+| Мін. SDK | Android 8.0 (API 26) |
+| Інтернет | ❌ Не потрібен |
+
+### Застосування
+
+- 🏭 **Промисловість / SCADA** — голосове керування без інтернету
+- 🎖️ **Військовий / спецзв'язок** — короткі кодові команди
+- ♿ **Доступне середовище (AAC)** — голосові команди для людей з обмеженою рухливістю
+- 🏥 **Медицина / екстрені служби** — швидкі коди тріажу
+- 📦 **Склад / логістика** — голосове керування операціями
+- 🎓 **Навчання / QA** — голосові тестові сценарії
+- 🔒 **Ізольовані системи** — без залежності від мережі
+
+---
+
+## Author
+
+**Nikolay Shikin** — freelance developer & designer  
+🌐 [shikinn.com](https://shikinn.com)  
+💼 [freelance.ru/guru_sun](https://freelance.ru/guru_sun)  
+🐙 [github.com/550953](https://github.com/550953)
+
+---
+
+*MIT License · Made in Ukraine 🇺🇦*
