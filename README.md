@@ -41,9 +41,13 @@ No internet. No cloud. Works in noisy environments — military comms, industria
   <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
 </a>
 
+**[🎬 Watch Video Demo](https://x.com/550953/status/2051284395743441243)** | **[🖥️ Try App Interface Prototype ](https://htmlpreview.github.io/?https://github.com/550953/kotlin-voice-commander/blob/main/docs/prototipe/mockup.html)**
+
 *Tap the image to watch the demo — live recognition in action*
 
 </div>
+
+
 
 ### Screenshots
 
