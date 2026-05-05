@@ -7,9 +7,10 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat&logo=jetpackcompose&logoColor=white)
-![Vosk](https://img.shields.io/badge/Vosk-ASR-orange?style=flat)
-![Offline](https://img.shields.io/badge/Offline-100%25-green?style=flat)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat)
+![Vosk](https://img.shields.io/badge/Vosk-offline%20ASR-orange?style=flat)
+![Offline](https://img.shields.io/badge/Internet-Not%20Required-green?style=flat)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/550953/kotlin-voice-commander/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/550953/kotlin-voice-commander?color=brightgreen)](https://github.com/550953/kotlin-voice-commander/releases/latest)
 
 ---
 
@@ -20,7 +21,9 @@
 ---
 
 <a name="en"></a>
-## 🇬🇧 EN
+## 🇬🇧 English
+
+**[Download APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Quick Start](#quick-start-en)** · **[Watch Demo](https://x.com/550953/status/2051284395743441243)**
 
 ### What is this?
 
@@ -29,6 +32,29 @@ Voice Commander is a fully offline Android app that recognizes short abbreviatio
 No internet. No cloud. Works in noisy environments — military comms, industrial control, accessibility devices.
 
 > Swap Vosk model and `dictionary.json` to use any language.
+
+### Demo
+
+<a href="https://x.com/550953/status/2051284395743441243">
+  <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
+</a>
+
+*Tap the image to watch the demo — live recognition in action*
+
+### Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/images/initial_state.jpg" width="160"><br><em>Initial State</em></td>
+    <td align="center"><img src="docs/images/system_permissions.jpg" width="160"><br><em>Permissions</em></td>
+    <td align="center"><img src="docs/images/json_setup.jpg" width="160"><br><em>JSON Setup</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/images/ready_config.jpg" width="160"><br><em>Ready Config</em></td>
+    <td align="center"><img src="docs/images/voice_execution.jpg" width="160"><br><em>Voice Execution</em></td>
+    <td align="center"><img src="docs/images/recognition_feedback.jpg" width="160"><br><em>Recognition Feedback</em></td>
+  </tr>
+</table>
 
 ### How it works
 
@@ -40,29 +66,26 @@ Speak abbreviation → Vosk recognizes → Two-pass search → TTS speaks the re
 **Pass 2** — exact match in main dictionary  
 **Result** — code spoken digit by digit: `13322` → *"one · three · three · two · two"*
 
-### Tech stack
+<a name="quick-start-en"></a>
+### Quick Start
 
-| Component | Technology |
-|---|---|
-| UI | Jetpack Compose + Material 3 |
-| Speech recognition | Vosk (offline, ru-0.22) |
-| Text-to-speech | Android TTS |
-| Language | Kotlin |
-| Min SDK | Android 8.0 (API 26) |
-| Internet required | ❌ Never |
+1. Download APK from [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) or clone and build
+2. Place Vosk model into `app/src/main/assets/model/`  
+   → Download: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+3. Add `dictionary.json` and `prefix.json` to `app/src/main/assets/`
+4. Launch — grant microphone permission — tap **Listen**
 
 ### Dictionary format
 
-Main dictionary (`dictionary.json`):
+`dictionary.json`:
 ```json
 {
   "ВГВКМ": "13322",
-  "ВКРОР": "41124",
-  "ВКВГТ": "32212"
+  "ВКРОР": "41124"
 }
 ```
 
-Prefix dictionary (`prefix.json`):
+`prefix.json`:
 ```json
 {
   "ВГВ": ["ВГВКМ"],
@@ -70,20 +93,30 @@ Prefix dictionary (`prefix.json`):
 }
 ```
 
-### Setup
+### Tech Stack
 
-1. Clone the repository
-2. Open in Android Studio
-3. Place Vosk Russian model into `app/src/main/assets/model/`  
-   → Download: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
-4. Add your `dictionary.json` and `prefix.json` to `app/src/main/assets/`
-5. Build and run
+| Component | Technology |
+|---|---|
+| Language | Kotlin |
+| UI | Jetpack Compose + Material 3 |
+| Speech Recognition | Vosk (offline, ru-0.22) |
+| Text-to-Speech | Android TTS |
+| JSON parsing | Gson |
+| Min SDK | Android 8.0 (API 26) |
+| Internet | ❌ Not required |
+
+### Required Permissions
+
+| Permission | Purpose |
+|---|---|
+| `RECORD_AUDIO` | Speech recognition |
+| `READ_EXTERNAL_STORAGE` | Load dictionary JSON files |
 
 ### Where it's useful
 
 - 🏭 **Industrial / SCADA** — voice control without internet
 - 🎖️ **Military / special comms** — short coded commands
-- ♿ **Accessibility (AAC)** — voice shortcuts for people with limited mobility
+- ♿ **Accessibility (AAC)** — voice shortcuts for limited mobility
 - 🏥 **Medical / emergency** — fast triage codes
 - 📦 **Warehouse / logistics** — pick-by-voice operations
 - 🎓 **Training / QA** — voice-driven test scripts
@@ -92,7 +125,9 @@ Prefix dictionary (`prefix.json`):
 ---
 
 <a name="ru"></a>
-## 🇷🇺 RU
+## 🇷🇺 Русский
+
+**[Скачать APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Быстрый старт](#quick-start-ru)** · **[Смотреть демо](https://x.com/550953/status/2051284395743441243)**
 
 ### Что это?
 
@@ -102,6 +137,14 @@ Voice Commander — полностью офлайн Android-приложение
 
 > Замените модель Vosk и `dictionary.json` для работы с любым языком.
 
+### Демо
+
+<a href="https://x.com/550953/status/2051284395743441243">
+  <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
+</a>
+
+*Нажмите на изображение — живое распознавание в действии*
+
 ### Как работает
 
 ```
@@ -110,27 +153,46 @@ Voice Commander — полностью офлайн Android-приложение
 
 **Проход 1** — поиск по префиксу (первые 3 символа)  
 **Проход 2** — точное совпадение в основном словаре  
-**Результат** — код озвучивается по цифрам: `13322` → *«один · три · три · два · два»*
+**Результат** — код по цифрам: `13322` → *«один · три · три · два · два»*
+
+<a name="quick-start-ru"></a>
+### Быстрый старт
+
+1. Скачать APK из [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) или клонировать и собрать
+2. Положить модель Vosk в `app/src/main/assets/model/`  
+   → Скачать: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+3. Добавить `dictionary.json` и `prefix.json` в `app/src/main/assets/`
+4. Запустить — выдать разрешение на микрофон — нажать **Слушать**
+
+### Формат словарей
+
+`dictionary.json`:
+```json
+{
+  "ВГВКМ": "13322",
+  "ВКРОР": "41124"
+}
+```
+
+`prefix.json`:
+```json
+{
+  "ВГВ": ["ВГВКМ"],
+  "ВКР": ["ВКРОР", "ВКРВК"]
+}
+```
 
 ### Стек
 
 | Компонент | Технология |
 |---|---|
+| Язык | Kotlin |
 | UI | Jetpack Compose + Material 3 |
 | Распознавание речи | Vosk (офлайн, ru-0.22) |
 | Озвучивание | Android TTS |
-| Язык | Kotlin |
-| Мин. версия Android | 8.0 (API 26) |
+| JSON | Gson |
+| Мин. SDK | Android 8.0 (API 26) |
 | Интернет | ❌ Не нужен |
-
-### Установка
-
-1. Клонировать репозиторий
-2. Открыть в Android Studio
-3. Положить модель Vosk в `app/src/main/assets/model/`  
-   → Скачать: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
-4. Добавить `dictionary.json` и `prefix.json` в `app/src/main/assets/`
-5. Собрать и запустить
 
 ### Применение
 
@@ -139,13 +201,15 @@ Voice Commander — полностью офлайн Android-приложение
 - ♿ **Доступная среда (AAC)** — голосовые команды для людей с ограниченной подвижностью
 - 🏥 **Медицина / экстренные службы** — быстрые коды триажа
 - 📦 **Склад / логистика** — голосовое управление операциями
-- 🎓 **Обучение / контроль качества** — голосовые тестовые сценарии
+- 🎓 **Обучение / QA** — голосовые тестовые сценарии
 - 🔒 **Изолированные системы** — без зависимости от сети
 
 ---
 
 <a name="ua"></a>
-## 🇺🇦 UA
+## 🇺🇦 Українська
+
+**[Завантажити APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Швидкий старт](#quick-start-ua)** · **[Дивитись демо](https://x.com/550953/status/2051284395743441243)**
 
 ### Що це?
 
@@ -155,6 +219,14 @@ Voice Commander — повністю офлайн Android-застосунок, 
 
 > Замініть модель Vosk і `dictionary.json` для роботи з будь-якою мовою.
 
+### Демо
+
+<a href="https://x.com/550953/status/2051284395743441243">
+  <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
+</a>
+
+*Натисніть на зображення — живе розпізнавання в дії*
+
 ### Як працює
 
 ```
@@ -163,27 +235,46 @@ Voice Commander — повністю офлайн Android-застосунок, 
 
 **Прохід 1** — пошук за префіксом (перші 3 символи)  
 **Прохід 2** — точний збіг в основному словнику  
-**Результат** — код озвучується по цифрах: `13322` → *«один · три · три · два · два»*
+**Результат** — код по цифрах: `13322` → *«один · три · три · два · два»*
+
+<a name="quick-start-ua"></a>
+### Швидкий старт
+
+1. Завантажити APK з [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) або клонувати та зібрати
+2. Покласти модель Vosk у `app/src/main/assets/model/`  
+   → Завантажити: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
+3. Додати `dictionary.json` і `prefix.json` у `app/src/main/assets/`
+4. Запустити — надати дозвіл на мікрофон — натиснути **Слухати**
+
+### Формат словників
+
+`dictionary.json`:
+```json
+{
+  "ВГВКМ": "13322",
+  "ВКРОР": "41124"
+}
+```
+
+`prefix.json`:
+```json
+{
+  "ВГВ": ["ВГВКМ"],
+  "ВКР": ["ВКРОР", "ВКРВК"]
+}
+```
 
 ### Стек
 
 | Компонент | Технологія |
 |---|---|
+| Мова | Kotlin |
 | UI | Jetpack Compose + Material 3 |
 | Розпізнавання мовлення | Vosk (офлайн, ru-0.22) |
 | Озвучування | Android TTS |
-| Мова | Kotlin |
-| Мін. версія Android | 8.0 (API 26) |
+| JSON | Gson |
+| Мін. SDK | Android 8.0 (API 26) |
 | Інтернет | ❌ Не потрібен |
-
-### Встановлення
-
-1. Клонувати репозиторій
-2. Відкрити в Android Studio
-3. Покласти модель Vosk у `app/src/main/assets/model/`  
-   → Завантажити: [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models) (vosk-model-small-ru)
-4. Додати `dictionary.json` і `prefix.json` у `app/src/main/assets/`
-5. Зібрати та запустити
 
 ### Застосування
 
@@ -192,7 +283,7 @@ Voice Commander — повністю офлайн Android-застосунок, 
 - ♿ **Доступне середовище (AAC)** — голосові команди для людей з обмеженою рухливістю
 - 🏥 **Медицина / екстрені служби** — швидкі коди тріажу
 - 📦 **Склад / логістика** — голосове керування операціями
-- 🎓 **Навчання / контроль якості** — голосові тестові сценарії
+- 🎓 **Навчання / QA** — голосові тестові сценарії
 - 🔒 **Ізольовані системи** — без залежності від мережі
 
 ---
