@@ -1,3 +1,5 @@
+
+```markdown
 # 🎙️ Voice Commander
 
 **Offline voice assistant for abbreviation commands**  
@@ -35,26 +37,26 @@ No internet. No cloud. Works in noisy environments — military comms, industria
 
 ### Demo
 
+<div align="center">
+
 <a href="https://x.com/550953/status/2051284395743441243">
   <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
 </a>
 
 *Tap the image to watch the demo — live recognition in action*
 
+</div>
+
 ### Screenshots
 
-<table>
-  <tr>
-    <td align="center"><img src="docs/images/initial_state.jpg" width="160"><br><em>Initial State</em></td>
-    <td align="center"><img src="docs/images/system_permissions.jpg" width="160"><br><em>Permissions</em></td>
-    <td align="center"><img src="docs/images/json_setup.jpg" width="160"><br><em>JSON Setup</em></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/images/ready_config.jpg" width="160"><br><em>Ready Config</em></td>
-    <td align="center"><img src="docs/images/voice_execution.jpg" width="160"><br><em>Voice Execution</em></td>
-    <td align="center"><img src="docs/images/recognition_feedback.jpg" width="160"><br><em>Recognition Feedback</em></td>
-  </tr>
-</table>
+<div align="center">
+
+| | | |
+|:-:|:-:|:-:|
+| <img src="docs/images/initial_state.jpg" width="160"><br>*Initial State* | <img src="docs/images/system_permissions.jpg" width="160"><br>*Permissions* | <img src="docs/images/json_setup.jpg" width="160"><br>*JSON Setup* |
+| <img src="docs/images/ready_config.jpg" width="160"><br>*Ready Config* | <img src="docs/images/voice_execution.jpg" width="160"><br>*Voice Execution* | <img src="docs/images/recognition_feedback.jpg" width="160"><br>*Recognition Feedback* |
+
+</div>
 
 ### How it works
 
@@ -139,11 +141,15 @@ Voice Commander — полностью офлайн Android-приложение
 
 ### Демо
 
+<div align="center">
+
 <a href="https://x.com/550953/status/2051284395743441243">
   <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
 </a>
 
 *Нажмите на изображение — живое распознавание в действии*
+
+</div>
 
 ### Как работает
 
@@ -221,11 +227,15 @@ Voice Commander — повністю офлайн Android-застосунок, 
 
 ### Демо
 
+<div align="center">
+
 <a href="https://x.com/550953/status/2051284395743441243">
   <img src="https://pbs.twimg.com/amplify_video_thumb/2051284071234355200/img/Ypm6OoBbey3b24na.jpg" alt="Voice Commander Demo" width="270">
 </a>
 
 *Натисніть на зображення — живе розпізнавання в дії*
+
+</div>
 
 ### Як працює
 
@@ -298,3 +308,4 @@ Voice Commander — повністю офлайн Android-застосунок, 
 ---
 
 *MIT License · Made in Ukraine 🇺🇦*
+```
