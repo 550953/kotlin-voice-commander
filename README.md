@@ -135,7 +135,7 @@ Speak abbreviation → Vosk recognizes → Two-pass search → TTS speaks the re
 <a name="ru"></a>
 ## 🇷🇺 Русский
 
-**[Скачать APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Быстрый старт](#quick-start-ru)** · **[Смотреть демо](https://x.com/550953/status/2051284395743441243)**
+**[Скачать APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Быстрый старт](#quick-start-en)** · **[Смотреть демо](https://x.com/550953/status/2051284395743441243)**
 
 ### Что это?
 
@@ -155,7 +155,7 @@ Voice Commander — полностью офлайн Android-приложение
 **Проход 2** — точное совпадение в основном словаре  
 **Результат** — код по цифрам: `13322` → *«один · три · три · два · два»*
 
-<a name="quick-start-ru"></a>
+<a name="quick-start-en"></a>
 ### Быстрый старт
 
 1. Скачать APK из [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) или клонировать и собрать
@@ -209,7 +209,7 @@ Voice Commander — полностью офлайн Android-приложение
 <a name="ua"></a>
 ## 🇺🇦 Українська
 
-**[Завантажити APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Швидкий старт](#quick-start-ua)** · **[Дивитись демо](https://x.com/550953/status/2051284395743441243)**
+**[Завантажити APK](https://github.com/550953/kotlin-voice-commander/releases/latest)** · **[Швидкий старт](#quick-start-en)** · **[Дивитись демо](https://x.com/550953/status/2051284395743441243)**
 
 ### Що це?
 
@@ -229,7 +229,7 @@ Voice Commander — повністю офлайн Android-застосунок, 
 **Прохід 2** — точний збіг в основному словнику  
 **Результат** — код по цифрах: `13322` → *«один · три · три · два · два»*
 
-<a name="quick-start-ua"></a>
+<a name="quick-start-en"></a>
 ### Швидкий старт
 
 1. Завантажити APK з [Releases](https://github.com/550953/kotlin-voice-commander/releases/latest) або клонувати та зібрати
