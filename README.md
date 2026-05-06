@@ -70,23 +70,17 @@ No internet. No cloud. Works in noisy environments — military comms, industria
 
 
 <div align="center">
-  <br/>
-  
-  ### 📸 Code Preview
-  
-  <a href="https://github.com/550953/kotlin-voice-commander/blob/main/app/src/main/java/com/example/voskspeechdemo/MainActivity.kt">
-    <img src="https://pbs.twimg.com/media/HHnnL-OXIAggMWV?format=jpg&name=4096x4096" alt="Voice Commander MainActivity.kt" width="650">
-  </a>
-  
-  <br/>
-  
-  
-  [**🐙 View on GitHub**](https://github.com/550953/kotlin-voice-commander/blob/main/app/src/main/java/com/example/voskspeechdemo/MainActivity.kt)
-  
-  <br/>
-  <br/>
-</div>
 
+<a href="https://pbs.twimg.com/media/HHnnL-OXIAggMWV?format=jpg&name=4096x4096">
+  <img src="https://pbs.twimg.com/media/HHnnL-OXIAggMWV?format=jpg&name=4096x4096" alt="Voice Commander Code" width="600">
+</a>
+
+<br/>
+
+<a href="https://x.com/550953/status/2051925430597271934">📱 View on X</a> · 
+<a href="https://github.com/550953/kotlin-voice-commander/blob/main/app/src/main/java/com/example/voskspeechdemo/MainActivity.kt">🐙 View on GitHub</a>
+
+</div>
 
 
 
