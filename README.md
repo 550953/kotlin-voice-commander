@@ -80,7 +80,7 @@ No internet. No cloud. Works in noisy environments — military comms, industria
   
   <br/>
   
-  [**📱 View on X**](https://x.com/550953/status/2051925430597271934) · 
+  
   [**🐙 View on GitHub**](https://github.com/550953/kotlin-voice-commander/blob/main/app/src/main/java/com/example/voskspeechdemo/MainActivity.kt)
   
   <br/>
@@ -316,6 +316,3 @@ Voice Commander — повністю офлайн Android-застосунок, 
 💼 [freelance.ru/guru_sun](https://freelance.ru/guru_sun)  
 🐙 [github.com/550953](https://github.com/550953)
 
----
-
-*MIT License · Made in Ukraine 🇺🇦*
